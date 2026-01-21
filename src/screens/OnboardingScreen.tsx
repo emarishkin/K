@@ -5,7 +5,6 @@ import { Image, Platform, Text, TouchableOpacity, View } from "react-native"
 export const OnboardingScreen = ({navigation}:any) => {
     const [currentPage, setCurrentPage] = useState(0)
 
-    // Логируем изменение страницы
     useEffect(() => {
         console.log('Текущая страница:', currentPage)
     }, [currentPage])
@@ -15,8 +14,8 @@ export const OnboardingScreen = ({navigation}:any) => {
     return (
     <View style={{ flex: 1 }}>
        <Onboarding
-            onSkip={()=>navigation.replace('Home')}
-            onDone={()=>navigation.replace('Home')}
+            onSkip={()=>navigation.replace('Welcome')}
+            onDone={()=>navigation.replace('Welcome')}
             SkipButtonComponent={HiddenButton}
             NextButtonComponent={HiddenButton}
             DoneButtonComponent={HiddenButton}
@@ -91,7 +90,7 @@ export const OnboardingScreen = ({navigation}:any) => {
                             <Text style={{ fontSize: 60 }}>прогресс</Text> 
                         </Text>
                         <View style={{marginBottom:40}}>
-                            <Image source={require('../assets/images/MyLifeMyrools.png')} style={{width: 250, height:250}} />
+                            <Image source={require('../assets/images/stats.png')} style={{width: 250, height:250}} />
                         </View>
                         <Text style={{fontSize: 22,color: 'white',textAlign: 'center',lineHeight: 28,paddingHorizontal: 30}}>
                             Приложение превращает рутину в увлекательный процесс. Наглядные графики покажут твои успехи!
@@ -110,7 +109,7 @@ export const OnboardingScreen = ({navigation}:any) => {
                             <Text style={{ fontSize: 60 }}>награды</Text> 
                         </Text>
                         <View style={{marginBottom:40}}>
-                            <Image source={require('../assets/images/MyLifeMyrools.png')} style={{width: 250, height:250}} />
+                            <Image source={require('../assets/images/trophy.png')} style={{width: 250, height:250}} />
                         </View>
                         <Text style={{fontSize: 22,color: 'white',textAlign: 'center',lineHeight: 28,paddingHorizontal: 30}}>
                             Зарабатывай достижения за регулярность и достигай новых высот!
@@ -133,7 +132,7 @@ export const OnboardingScreen = ({navigation}:any) => {
                 borderRadius: 20,
                 zIndex: 100,
             }}
-            onPress={() => navigation.replace('Home')}
+            onPress={() => navigation.replace('Welcome')}
         >
             <Text style={{ color: 'white', fontSize: 16, fontWeight: '600' }}>
                 Пропустить
@@ -153,7 +152,7 @@ export const OnboardingScreen = ({navigation}:any) => {
                     alignItems: 'center',
                     zIndex: 100,
                 }}
-                onPress={() => navigation.replace('Home')}
+                onPress={() => navigation.replace('Welcome')}
             >
                 <Text style={{ 
                     color: '#EF4444',
