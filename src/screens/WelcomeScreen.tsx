@@ -1,4 +1,4 @@
-import { Image, SafeAreaView, StatusBar, Text, View } from "react-native"
+import { Image, SafeAreaView, StatusBar, Text, TouchableOpacity, View } from "react-native"
 import { globalStyles } from "../styles/globalStyles"
 import { colors } from "../styles/colors"
 
@@ -18,6 +18,27 @@ export const WelcomeScreen = ({navigation}:any) => {
                     </Text>
                 </View>
             </View>
+
+            <View style={{width:'100%',gap:16}}>
+                <TouchableOpacity style={[globalStyles.buttonPrimary,{width:'100%'}]} onPress={()=>navigation.navigate('Register')}>
+                    <Text style={globalStyles.buttonText}>
+                        Регистрация
+                    </Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={{width:'100%',paddingVertical: 16,borderWidth: 2,borderColor: colors.primary,borderRadius: 12,alignItems: 'center'}} onPress={()=>navigation.navigate('Login')}>
+                    <Text style={globalStyles.buttonText}>
+                        Войти
+                    </Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={{width:'100%',paddingVertical: 16,backgroundColor: '#F8FAFC',borderColor: colors.textSecondary + '20',borderWidth: 1,alignItems: 'center'}} onPress={()=>navigation.navigate('Home')}>
+                    <Text style={{color: colors.textPrimary,fontSize: 16,fontWeight: '500'}}>
+                        Продолжить как гость
+                    </Text>
+                </TouchableOpacity>
+            </View>
+
             
         </SafeAreaView>
     )
